@@ -11,6 +11,14 @@ For now, the toolchain is built for Apple Mac OS 11.x x86_64 and targets the Dro
 I could probably generate additional toolchains for other platforms, but I have three children...
 
 
+## Disclaimer
+This toolchain allows you build software that you can run on your NAS with little to no protection for the NAS contents.
+As a result, using this toolchain you can quite easily build and run software that can destroy your NAS contents.
+I offer zero warranties. You are on your own. Don't sue me. 
+For the complete avoidance of doubt, this legal disclaimer intends to clarify that you have no legal grounds to hold me liable for 
+any losses of any kind you incur as a result of you using this software.
+I'm giving you a pair of sharp scissors. Don't run down the stairs while holding them.
+
 ## Installation
 
 Download [crossdrobo-x86_64-apple-darwin20.3.0-v0.1.tgz](https://github.com/scarpazza/crossdrobo/raw/main/crossdrobo-x86_64-apple-darwin20.3.0-v0.1.tgz)
