@@ -8,7 +8,10 @@ This repository contains a preliminary version of a GCC-based toolchain able to 
 This is intended for all the Drobo owners and enthusiasts who want to be able to run their software on the Drobo.
 
 For now, the toolchain is built for Apple Mac OS 11.x x86_64 and targets the Drobo 5N with the exact software version I have,
-I could probably generate additional toolchains for other platforms, but I have three children...
+I could probably generate additional toolchains for other platforms, but I have three children.
+
+The project is still very green and rough around the edges, but it was put together in a weekend.
+I'll clean it up later.
 
 
 ## Disclaimer
@@ -133,7 +136,7 @@ Revision	: 0000
 Serial		: 0000000000000000
 ```
 
-According to [OpenBanchmarking](https://openbenchmarking.org/s/Marvell%20PJ4Bv7%20rev%202) is a quad-core, little endian Arm 7 CPU:
+According to [OpenBanchmarking](https://openbenchmarking.org/s/Marvell%20PJ4Bv7%20rev%202) this is a quad-core, little endian Arm 7 CPU, so it's possible that one of the cores is disabled or reserved.
 
 ```
 Architecture:          armv7l
