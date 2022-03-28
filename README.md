@@ -90,12 +90,13 @@ ELF Header:
   Section header string table index: 28
 ```
 
-Finally, run the executable by copying to a share (e.g., called "Incoming" already mounted at `/Volumes/Incoming`) and running it!
+Finally, copy your `hello` executable onto a Drobo-served share, e.g., called "Incoming" in the example below and already mounted at `/Volumes/Incoming` on the build host.
+You will be able to find the same executable on the Drobo at absolute path `/mnt/DroboFS/Shares/Incoming/`.
 
 ```
 macbook:crossdrobo scarpaz$ cp hello /Volumes/Incoming/
 
-macbook:crossdrobo scarpaz$ ssh mydrobo
+macbook:crossdrobo scarpaz$ ssh scarpazdrobo
 
 ScarpazDrobo:~ $ cd /mnt/DroboFS/Shares/Incoming/
 
@@ -105,31 +106,40 @@ Hello, world!
 ```
 
 Note: as you can see, the Drobo can execute software straight from its mounted, shared partitions.
-Therefore, side-loading executables to the Drobo is as simple as copying you software directly to any Drobo-served share mounted on
+Therefore, side-loading software to the Drobo is as simple as copying it to any Drobo-served share mounted on
 your build host.
+
+Vendor supported apps are under `/mnt/DroboFS/Shares/DroboApps`. 
+You can alter the contents of vendor-supported apps by overwriting this hierarchy.
+Do this at your own risk.
+
 
 
 ## Details
 
-This toolchain was built with:
-- gcc 7.2.0
-- binutils 2.34
-- linux kernel headers 3.2.96
-- glibc 2.25
+I built this toolchain with the following versions:
+
+| Package              | Version |
+|----------------------|---------|
+| gcc                  | 7.2.0   |
+| binutils             | 2.34    |
+| linux kernel headers | 3.2.96  |
+| glibc                | 2.25    |
+
+The versions of glibc and kernel headers I chose match accurately the ones I found on my Drobo.
+As gcc and binutils are concerned, I choose versions that seemed sufficiently contemporary to those of glibc and the kernel.
 
 
 ## Drobo Environment
 
-This toolchain matches accurately the software I found on my Drobo 5N,
-which runs Linux 3.2.96:
- 
+This toolchain matches accurately the kernel version I found on my Drobo 5N: 
  
  ```
 $ uname -a
 Linux ScarpazDrobo 3.2.96-3 #1 SMP Tue May 21 21:58:06 UTC 2019 armv7l GNU/Linux
 ```
 
-... and hosts a 3-core Marvell Armada:
+... and matches the ARM processor found, i.e., a Marvell Armada of which 3 cores are exposed to the OS:
 
 ```
 ScarpazDrobo:~ $ cat /proc/cpuinfo
