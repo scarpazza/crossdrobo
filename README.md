@@ -104,7 +104,9 @@ ScarpazDrobo:~/Shares/Incoming $ ./hello
 Hello, world!
 ```
 
-Yay!
+Note: as you can see, the Drobo can execute software straight from its mounted, shared partitions.
+Therefore, side-loading executables to the Drobo is as simple as copying you software directly to any Drobo-served share mounted on
+your build host.
 
 
 ## Details
