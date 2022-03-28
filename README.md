@@ -3,9 +3,19 @@ A gcc-based toolchain targeting the Drobo NAS
 
 ## Goal
 
-This repository contains a preliminary version of a GCC-based toolchain able to target the Drobo 5N.
+This repository contains a preliminary version of a GCC-based toolchain able to target the Drobo 5N and 
+maybe other Drobo devices.
 
-This is intended for all the Drobo owners and enthusiasts who want to be able to run their software on the Drobo.
+I curate this toolchain by hand, and I release it in binary format so that it's immediately ready for use. 
+
+The effort is intended for all the Drobo owners and enthusiasts who want to be able to build software and run it on the Drobo.
+
+The toolchain makes it quite possible for you to port arbitrary C or C++ software, including many open source packages, 
+to the Drobo. 
+
+It is even quite possible for you to recompile and update open software currently offered in the form of "Drobo Apps",
+(e.g., the Apache web server, mysql, python, Wordpress, perl, svn) and replace the official versions with more modern ones,
+or with variants that offer more features enabled at compile time.
 
 For now, the toolchain is built for Apple Mac OS 11.x x86_64 and targets the Drobo 5N with the exact software version I have,
 I could probably generate additional toolchains for other platforms, but I have three children.
@@ -15,11 +25,13 @@ I'll clean it up later.
 
 
 ## Disclaimer
-This toolchain allows you build software that you can run on your NAS with little to no protection for the NAS contents.
-As a result, using this toolchain you can quite easily build and run software that can destroy your NAS contents.
+
+This section is a legal disclaimer clarifying that you have no legal grounds to hold me liable for 
+any losses of any kind you may incur as a result of you using the software or the information posted in this repository.
+This toolchain allows you build software that you can run on your NAS with little to no protection for the NAS contents 
+or the integrity of its software environment. As a result, this toolchain makes it quite possible for you to build software that,
+when run on your NAS, can destroy its contents, or render the NAS unreachable or unusuable. 
 I offer zero warranties. You are on your own. Don't sue me. 
-For the complete avoidance of doubt, this legal disclaimer intends to clarify that you have no legal grounds to hold me liable for 
-any losses of any kind you incur as a result of you using this software.
 I'm giving you a pair of sharp scissors. Don't run down the stairs while holding them.
 
 ## Installation
@@ -36,6 +48,11 @@ tar xvf crossdrobo-x86_64-apple-darwin20.3.0-v0.1.tgz  -C /
 chmod a-w  -R $PREFIX
 chmod a+rX -R $PREFIX
 ```
+
+The tarball unpacks under `/opt/local/crossdrobo`.
+You are chowning it to your non-privileged user and making it readable to all other users on the system.
+
+
 
 ## Test
 
